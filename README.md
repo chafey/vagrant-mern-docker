@@ -1,52 +1,29 @@
 # vagrant-mern-docker
 Vagrant for building mern applications with docker 
 
+Startup vagrant and prepare source tree
+
 Terminal One:
 
 > vagrant up
+
+> cd src
+
+> git clone <your git repo>
 
 > vagrant ssh
 
 > cd src
 
-> mkdir testApp
-
-> cd testApp
-
-# create your node app here, start it listening on port 9000
+## run your application listening on port 9000
 
 Open the meteor app in your web browser running on the host:
 
 > open http://localhost:9000/
 
-
 NOTE: you can run vagrant rsync-auto in another terminal to synchronize source changes made in the host to the guest.  This
-can be useful when you want to use an editor on your host (e.g. Visual Studio Code).  Since you created the node appolication
-in the guest, you can copy it to the host so you can edit it in your editor:
-
-Terminal One:
-
-> cp -r ~/src/testApp /vagrant/src
-
-And in another terminal, check in your code:
-
-Terminal Two:
-
-> cd src/testApp
-
-> git init
-
-> git add .
-
-> git commit -m "First commit"
-
-> git remote add origin https://github.com/chafey/testApp.git
-
-> git remote -v
-
-> git push orgin master
-
-And then run vagrant-rsync-auto to sync changes from host to guest
+can be useful when you want to use an editor on your host (e.g. Visual Studio Code).  And then run vagrant-rsync-auto to sync
+ changes from host to guest
 
 Terminal Two: 
 
